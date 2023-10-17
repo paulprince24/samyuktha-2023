@@ -82,7 +82,7 @@ export default function TemporaryDrawer({ open, anchor, setDrawer }) {
                 {links.map((link, index) => (
                   <ListItem key={link.text} disablePadding>
                     <ListItemButton>
-                      <a href={link.url}>
+                      <a href={link.url} style={{color:"black"}}>
                         <ListItemText primary={link.text} />
                       </a>
                     </ListItemButton>
