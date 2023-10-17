@@ -5,3 +5,9 @@
   width: auto !important;
   max-width: 30px !important;
 }
+
+
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  background-color: black;
+}

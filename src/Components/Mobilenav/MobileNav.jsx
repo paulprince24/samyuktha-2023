@@ -48,7 +48,7 @@ export default function TemporaryDrawer({ open, anchor, setDrawer }) {
   return (
     <div>
       <React.Fragment>
-        <div className="container bg-black">
+        <div className="container bg-black mobnav">
           <Drawer
             anchor={anchor}
             open={state[anchor]}

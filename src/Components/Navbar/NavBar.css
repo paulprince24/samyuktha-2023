@@ -29,7 +29,7 @@ body {
     align-items: center;
   }
 
-  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  /* .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
     background-color: black !important;
   }
   .css-10hburv-MuiTypography-root {
@@ -42,7 +42,7 @@ body {
   .css-10hburv-MuiTypography-root:hover {
     background-color: orange !important;
     border-radius: 50px;
-  }
+  } */
 }
 
 .menu .item {
@@ -67,4 +67,14 @@ body {
   left: 0;
   z-index: -1;
   border-radius: 50px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  background-color: black !important;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-4t3x6l-MuiPaper-root-MuiDrawer-paper span{
+  color: rgb(246, 239, 239) !important;
+  font-family: Creepster
+
 }
