@@ -55,6 +55,7 @@ export default function TemporaryDrawer({ open, anchor, setDrawer }) {
             onClose={toggleDrawer(anchor, false)}
             style={{
               borderRadius: "50px",
+              background:"black"
             }}
           >
             <Box
