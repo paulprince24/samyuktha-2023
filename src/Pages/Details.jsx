@@ -129,7 +129,7 @@ export default function Details() {
         const errorMessage = error.message;
       });
   };
-  console.log(events)
+  
   return (
     <div>
       <section>
