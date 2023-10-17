@@ -47,7 +47,6 @@ export default function TemporaryDrawer({ open, anchor, setDrawer }) {
 
   return (
     <div>
-      <img src={phto}/>
       <React.Fragment>
         <div className="container">
           <Drawer
