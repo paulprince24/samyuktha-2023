@@ -129,7 +129,7 @@ export default function Details() {
         const errorMessage = error.message;
       });
   };
-
+  console.log(events)
   return (
     <div>
       <section>
@@ -178,7 +178,7 @@ export default function Details() {
               <p className="text-light">{event.eventDesc}</p>
               <br />
 
-              <p className="text-light"></p>
+              <p className="text-warning">Registration Fee : {event.regFee} /-</p>
               <h3 className="m-2"></h3>
 
               <section>
