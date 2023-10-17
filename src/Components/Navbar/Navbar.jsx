@@ -9,15 +9,15 @@ Items
 --------------------*/
 const items = [
   {
-    name: "Events",
+    name: "Home",
     color: "#ffac09",
-    href: "/events",
+    href: "/",
     type: "text",
   },
   {
-    name: "About Us",
+    name: "Events",
     color: "#ffac09",
-    href: "/#about",
+    href: "/events",
     type: "text",
   },
   {
@@ -33,9 +33,9 @@ const items = [
     type: "text",
   },
   {
-    name: "Sign In",
+    name: "About Us",
     color: "#ffac09",
-    href: "#",
+    href: "/aboutUs",
     type: "text",
   },
 ];

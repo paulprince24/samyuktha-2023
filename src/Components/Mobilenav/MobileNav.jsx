@@ -7,6 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import "./MobileNav";
+import phto from '../About/first look logo.png'
 
 export default function TemporaryDrawer({ open, anchor, setDrawer }) {
   const [state, setState] = React.useState({
@@ -46,6 +47,7 @@ export default function TemporaryDrawer({ open, anchor, setDrawer }) {
 
   return (
     <div>
+      <img src={phto}/>
       <React.Fragment>
         <div className="container">
           <Drawer

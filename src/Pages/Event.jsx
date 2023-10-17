@@ -35,6 +35,7 @@ export default function Event() {
       {drawer && <MobileNav open={drawer} anchor='left' setDrawer={setDrawer} />}
     </>
      </section>
+     
      <CardList />
 
      <br /><br />

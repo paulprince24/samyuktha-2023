@@ -2,6 +2,7 @@
 
 body {
   background-color: black;
+  overflow-x: hidden;
 }
 .main_container {
   scroll-behavior: auto;
@@ -41,15 +42,28 @@ ul {
 .contact_card {
   box-shadow: 1px 1px 25px #ffad091f;
   background-color: black;
-  max-width: 500px;
+  max-width: 700px;
   min-width: 290px;
 }
+.rules_main{
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+@media (max-width: 600px){
+  .rules_main{
+    display: block;
+  }
+}
+
+
 .icon_detail {
   color: #ffad09;
   font-size: 60px;
 }
 .prize_text {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 ::-webkit-scrollbar {

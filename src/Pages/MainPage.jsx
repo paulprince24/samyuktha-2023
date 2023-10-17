@@ -16,6 +16,7 @@ const MainPage = () => {
   return (
     <div className="bg-drak">
       <section>
+
         <>
           {isSmallScreen ? (
             <div onClick={openDrawer} style={{ cursor: "pointer" }}>

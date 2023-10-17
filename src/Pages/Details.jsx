@@ -24,6 +24,12 @@ import {
   browserLocalPersistence,
 } from "firebase/auth";
 import RegistrationForm from "../Components/Modal/RegistrationModel/RegistrationModel";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+
+
+
 export default function Details() {
   const { name } = useParams();
   const { id } = useParams();
@@ -39,6 +45,7 @@ export default function Details() {
   const [user, setUser] = useState("");
 
   useEffect(() => {
+    AOS.init();
     const fetchEvents = async () => {
       try {
         const eventsCollectionRef = collection(db, "events");
@@ -123,9 +130,6 @@ export default function Details() {
       });
   };
 
-  // console.log(events);
-  // console.log(id);
-  // console.log(events[0].teamStrength);
   return (
     <div>
       <section>
@@ -161,8 +165,8 @@ export default function Details() {
             key={index}
             className="container p-5 d-sm-flex justify-space-around"
           >
-            <img src={event.cover} className="img-thumbnail thum_image m-3" />
-            <div className="container p-2 pt-4">
+            <img src={event.cover} className="img-thumbnail thum_image m-3" data-aos='zoom-in' />
+            <div className="container p-2 pt-4" data-aos='fade-left'>
               <h1 className="text-warning details_head">{event.eventName}</h1>
               <button className="btn btn-outline-warning btn-sm btn-rounded text-warning m-2">
                 {event.eventCategory}
@@ -221,9 +225,10 @@ export default function Details() {
               </section>
             </div>
             <br />
+            <br />
           </section>
-          <div className="d-sm-flex justify-space-around">
-            <div className="rule_card rounded-9 m-3 p-3">
+          <div className="d-sm-flex justify-space-around rules_main">
+            <div className="rule_card rounded-9 m-3 p-3" data-aos= 'fade-right' data-aos-duration='1500'>
               <center>
                 <h4 className="text-warning">Rules</h4>
               </center>
@@ -236,7 +241,7 @@ export default function Details() {
                   ))}
               </ul>
             </div>
-            <div className="rounded-7 m-3 p-3 contact_card ">
+            <div className="rounded-7 m-3 p-3 contact_card " data-aos= 'fade-down' data-aos-duration='1500'>
               <center>
                 <CallIcon fontSize="1px" className="icon_detail" />
               </center>
@@ -254,17 +259,17 @@ export default function Details() {
               <div className="d-flex justify-content-around align-items-center p-3">
                 <div>
                   <span className="text-light prize_text">
-                    {event.studentIncharge1} :{" "}
+                    {event.studentIncharge2} :{" "}
                   </span>
                 </div>
                 <span className="text-light prize_text">
-                  {event.studentIncharge1Mobile}
+                  {event.studentIncharge2Mobile}
                 </span>{" "}
                 <br />
               </div>
               {/* <span  className="text-light m-5">{event.studentIncharge2} : </span><span>{event.studentIncharge2Mobile}</span> */}
             </div>
-            <div className="rounded-7 m-3 p-3 contact_card">
+            <div className="rounded-7 m-3 p-3 contact_card" data-aos= 'fade-left' data-aos-duration='1500'>
               <center>
                 <EmojiEventsIcon fontSize="3px" className="icon_detail" />
               </center>
@@ -272,19 +277,20 @@ export default function Details() {
                 <div>
                   <span className="text-light prize_text m-1">1st :</span>
                 </div>
-                <span className="text-light prize_text">3000/-</span> <br />
+                <span className="text-light prize_text">{event.firstPrize} /-</span> <br />
               </div>
               <div className="d-flex justify-content-around p-2">
                 <div>
                   <span className="text-light prize_text m-1">2st :</span>
                 </div>
-                <span className="text-light prize_text">1000/-</span> <br />
+                <span className="text-light prize_text">{event.secondPrize} /-</span> <br />
               </div>
               {/* <span  className="text-light m-5">{event.studentIncharge2} : </span><span>{event.studentIncharge2Mobile}</span> */}
             </div>
           </div>
         </div>
       ))}
+      <br /><br />
 
       <Footer />
     </div>

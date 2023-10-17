@@ -85,6 +85,15 @@ button {
 .game-section {
   padding: 60px 50px;
 }
+.game-section .owl-carousel{
+  display: flex;
+  justify-content: center ;
+}
+@media (max-width: 600px){
+  .game-section .owl-carousel{
+    display: block;
+  }
+}
 .game-section .owl-stage {
   margin: 15px 0;
   display: flex;
