@@ -116,6 +116,7 @@ const TemporaryDrawer = () => {
     background: "black",
     color: "white",
     display: "flex",
+    width:'60%',
   };
   return (
     <>
