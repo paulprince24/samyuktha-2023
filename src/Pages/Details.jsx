@@ -98,6 +98,7 @@ export default function Details() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             localStorage.setItem("rftoken", token);
+            localStorage.setItem("zftoken", credential);
             // The signed-in user info.
             const user = result.user;
 
