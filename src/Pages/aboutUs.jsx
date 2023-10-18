@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { NavBar } from "../Components/Navbar/Navbar";
 import { useMediaQuery } from "@mui/material";
 import MobileNav from "../Components/Mobilenav/MobileNav";
+import { Footer } from "antd/es/layout/layout";
 
 export default function AboutUs() {
   const isSmallScreen = useMediaQuery("(max-width: 784px)");
@@ -65,6 +66,7 @@ export default function AboutUs() {
             <br />
           </div>
         </center>
+        
       </div>
     </>
   );
