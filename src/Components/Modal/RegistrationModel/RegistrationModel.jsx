@@ -3,7 +3,7 @@ import { Button, Modal, Form, Input, Space, InputNumber } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import "./RegistrationForm.css";
 import { useForm } from "antd/es/form/Form";
-import { updateDoc, doc, getFirestore } from "firebase/firestore";
+import { updateDoc, doc, getFirestore, getDoc } from "firebase/firestore";
 import firebase from "../../../Firebase/Config";
 
 const RegistrationForm = ({ email, eventName, eventId, strength }) => {
@@ -27,20 +27,26 @@ const RegistrationForm = ({ email, eventName, eventId, strength }) => {
     const documentRef = doc(db, "events", eventId);
     const uid = localStorage.getItem("uid");
 
+    // Get the existing participants data from Firestore
+    const documentSnapshot = await getDoc(documentRef);
+    const eventData = documentSnapshot.data();
+    const existingParticipants = eventData.participants || {};
+
     if (
       (values.members && values.members.length === 0) ||
       values.members === undefined
     ) {
       values.members = null;
     }
-    const participantData = {
-      [uid]: values,
-    };
 
-    // Update the "participants" field in the Firestore document.
+    // Add the new participant's data with their UID as the key
+    existingParticipants[uid] = values;
+
+    // Update the "participants" field with the updated data
     await updateDoc(documentRef, {
-      participants: participantData,
+      participants: existingParticipants,
     });
+
     console.log("Received values of form:", values);
     setIsModalOpen(false);
   };
